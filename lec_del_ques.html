@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--Written by Shea Yuin Ng, Nathan Sherburn-->
+<!--Created 6 May 2013-->
+<!--For lecturers to delete their questions from question list-->
+<html>
+	<head>
+		<title>Delete Question</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<?php include('session_handler.php'); ?>
+		<?php echo '<link rel="stylesheet" href="css/'; include('check_theme.php'); echo '" />'; ?>
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery/jquery.mobile-1.3.1.min.js"></script>
+		<script src="jquery/jquery-migrate-1.1.0.js"></script>
+	</head>
+	<body>
+		<!-- /Lecturer home page -->
+		<div data-role="page" id="lec_student_list" data-theme="a">
+			<div data-role="header" data-theme="c">
+				<script type="text/javascript" charset="utf-8" src="javascript/delete_lecques.js"></script>
+
+				<table border="0"><tr><td style="padding-left:24px;">
+				<a href="lec_ques_list.html" rel="external"><img border="0" src="back.png" height="24" width="20"></a>
+				</td><td width="100%">
+				<center>Delete Question</center>
+				</td><td style="padding-right:24px;">
+				<script type="text/javascript" charset="utf-8" src="javascript/logout.js"></script>
+				<a href id="page_logout_submit" rel="external" data-ajax="false"><img border="0" src="logout.png" height="24" width="20"></a>
+				</td></tr></table>
+				</div>
+			<!-- /header -->
+			<div data-role="content" data-theme="a" style="max-width:800px;margin: 0 auto;">
+				<div>
+					<br>
+					<a data-role="button" data-inline = "true" data-mini = "true" id = "selectall">Select All</a>
+					<a data-role="button" data-inline = "true" data-mini = "true" id = "unselectall">Unselect All</a>
+					<a data-role="button" data-inline = "true" data-mini = "true" id = "delete_lecques">Delete</a>
+				</div>
+				<!-- /Function button -->
+				<p id = msg></p>
+				<table data-role="table" id="lecturer_queslist" class="ui-responsive table-stroke">
+					<thead>
+						<tr>
+							<th></th>
+							<th>No.</th>
+							<th>Question</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<p id = "statusmsg"></p>
+				<br>
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /page --> 
+	</body>
+</html>

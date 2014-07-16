@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--Written by Shea Yuin Ng, Nathan Sherburn-->
+<!--Created 3 May 2013-->
+<!--For students to view and vote for the question posted by student-->
+<html>
+	<head>
+		<title>Student's Question</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<?php include('session_handler.php'); ?>
+		<?php echo '<link rel="stylesheet" href="css/'; include('check_theme.php'); echo '" />'; ?>
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery/jquery.mobile-1.3.1.min.js"></script>
+		<script src="jquery/jquery-migrate-1.1.0.js"></script>
+		<?php echo '<script src="http://';	echo $_SERVER['HTTP_HOST']; echo ':8000/socket.io/socket.io.js"/></script>' ?>
+	</head>
+	<body>
+		<!-- Lecturer sessionpage -->
+		<div data-role="page" id="lec_sessionpage" data-theme="a">
+			<div data-role="header" data-theme="c">
+				<script type="text/javascript" charset="utf-8" src="javascript/stud_uscale.js"></script>
+				<script type="text/javascript" charset="utf-8" src="javascript/stu_stuques.js"></script>
+
+				<table border="0"><tr><td style="padding-left:24px;">
+				<a href="stu_ask_ques.html"  rel="external"><img border="0" src="back.png" height="24" width="20"></a>
+				</td><td width="100%">
+				<center>Question</center>
+				</td><td style="padding-right:24px;">
+				<script type="text/javascript" charset="utf-8" src="javascript/logout.js"></script>
+				<a href id="page_logout_submit" rel="external" data-ajax="false"><img border="0" src="logout.png" height="24" width="20"></a>
+				</td></tr></table>
+			</div>
+			<!-- /header -->
+			<!--U-scale grid-->				
+			<div style="background-color:#EAEAEA;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;">
+				<div class="ui-grid-a" style="max-width:800px;margin: 0 auto;">
+					<div class="ui-block-a"><a data-role="button"  data-theme="h" class="u_scale" data-mini="true" id = "Y"><img src="good.png" /></a></div>
+					<div class="ui-block-b"><a data-role="button"  data-theme="f" class="u_scale" data-mini="true" id = "N"><img src="bad.png" /></a></div>
+				</div>
+			</div>
+			<div data-role="content" data-theme="a" style="max-width:800px;margin: 0 auto;">
+				<div style="background-color:#EAEAEA;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;">
+					<a href data-inline="true" id="vote"><img src="vote.png"></a>
+					<b id="ques_title"></b>
+					</br>
+					<p id="question" style = "white-space: pre-wrap;"></p>
+				</div>
+				</br>
+				<div style="background-color:#EAEAEA;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;font-size:12px;">
+					<p id="numOfVotes" ></p>
+				</div>
+				</br>
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /page --> 
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--Written by Shea Yuin Ng, Nathan Sherburn-->
+<!--Created 28 March 2013-->
+<!--For lecturers to add questions to question list-->
+<html>
+	<head>
+		<title>Add Questions</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<?php include('session_handler.php'); ?>
+		<?php echo '<link rel="stylesheet" href="css/'; include('check_theme.php'); echo '" />'; ?>
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery/jquery.mobile-1.3.1.min.js"></script>
+		<script src="jquery/jquery-migrate-1.1.0.js"></script>
+	</head>
+	<body>
+		<!-- Lecturer sessionpage -->
+		<div data-role="page" id="lec_add_ques" data-theme="a">
+			<div data-role="header" data-theme="c">
+				<script type="text/javascript" charset="utf-8" src="javascript/lec_add_ques.js"></script>
+
+				<table border="0"><tr><td style="padding-left:24px;">
+				<a href="lec_ques_list.html"  rel="external"><img border="0" src="back.png" height="24" width="20"></a>
+				</td><td width="100%">
+				<center>Add a Question</center>
+				</td><td style="padding-right:24px;">
+				<script type="text/javascript" charset="utf-8" src="javascript/logout.js"></script>
+				<a href id="page_logout_submit" rel="external" data-ajax="false"><img border="0" src="logout.png" height="24" width="20"></a>
+				</td></tr></table>
+			</div>
+			<!-- /header -->
+			<div data-role="content" data-theme="a" style="max-width:800px;margin: 0 auto;">
+				</br>
+				<div>
+					<b>Question</b>
+					<input type="text" id="lec_ques" />
+					</br>
+				</div>
+				
+				<div>
+					<table border="0"><tr><td width="100%"><b>Answer A</b></td><td>
+					<div style="width:150px">
+					<input type="checkbox" data-theme="b" name="A" id="ans_A" class="checkbox" value="A" data-iconpos="right" data-mini="true"/>
+					<label for="ans_A">Correct answer</label></div>
+					</td></tr></table>
+					<input type="text" id="A" />
+				</div>
+				<div>
+					<table border="0"><tr><td width="100%"><b>Answer B</b></td><td>
+					<div style="width:150px">
+					<input type="checkbox" data-theme="b" name="B" id="ans_B" class="checkbox" value="B" data-iconpos="right" data-mini="true"/>
+					<label for="ans_B">Correct answer</label></div>
+					</td></tr></table>
+					<input type="text" id="B" />
+				</div>
+				<div>
+					<table border="0"><tr><td width="100%"><b>Answer C</b></td><td>
+					<div style="width:150px">
+					<input type="checkbox" data-theme="b" name="C" id="ans_C" class="checkbox" value="C" data-iconpos="right" data-mini="true"/>
+					<label for="ans_C">Correct answer</label></div>
+					</td></tr></table>
+					<input type="text" id="C" />
+				</div>
+				<div>
+					<table border="0"><tr><td width="100%"><b>Answer D</b></td><td>
+					<div style="width:150px">
+					<input type="checkbox" data-theme="b" name="D" id="ans_D" class="checkbox" value="D" data-iconpos="right" data-mini="true"/>
+					<label for="ans_D">Correct answer</label></div>
+					</td></tr></table>
+					<input type="text" id="D" />
+				</div>
+				</br>
+				<fieldset>
+					<a data-role="button"  data-theme="a" id = "add_ques_submit">Add question</a>
+				</fieldset>
+				<!-- To write message from PHP -->
+				<div>
+					<p id="msg"></p>
+				</div>
+			</div>
+			</br>
+			</br>
+			<!-- /content -->
+		</div>
+		<!-- /page --> 
+	</body>
+</html>

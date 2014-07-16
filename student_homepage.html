@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Written by Shea Yuin Ng, Nathan Sherburn-->
+<!--Created 3 October 2012-->
+<!--Student's homepage-->
+<html>
+	<head>
+		<title>Welcome</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<?php include('session_handler.php'); ?>
+		<link rel="stylesheet" href="css/melts.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery/jquery.mobile-1.3.1.min.js"></script>
+		<script src="jquery/jquery-migrate-1.1.0.js"></script>	
+	</head>
+	<body>
+		<!-- /Student home page -->
+		<div data-role="page" id="student_homepage" data-theme="a">
+			<div data-role="header" data-theme="c" data-position="inline">
+				<script type="text/javascript" charset="utf-8" src="javascript/studview_unit.js"></script>
+				<!--makes list of unit codes and unit names, creates choose unit class-->
+
+				<table border="0"><tr><td style="padding-left:40px;">
+				</td><td width="100%">
+				<center>Welcome</center>
+				</td><td style="padding-right:24px;">
+				<script type="text/javascript" charset="utf-8" src="javascript/logout.js"></script>
+				<a href id="page_logout_submit" rel="external" data-ajax="false"><img border="0" src="logout.png" height="24" width="20"></a>
+				</td></tr></table>
+			</div>		
+			<!-- /header -->
+			<div data-role="content" data-theme="a" style="max-width:800px;margin: 0 auto;">
+				<div>
+					</br>
+					<b id="view_unitmsg"></b>
+					</br>
+					</br>
+					<!-- /Display the list of units-->
+					<ul data-role="listview" data-theme="b" id="viewunit_optionlist">
+					</ul>
+					<script type="text/javascript" charset="utf-8" src="javascript/select_unit.js"></script>
+					<!--sends to stu or lec page, update session variable with unit info-->
+					</br>
+					</br>
+					</br>
+				</div>
+				<!-- /unit list -->
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /page -->
+	</body>
+</html>

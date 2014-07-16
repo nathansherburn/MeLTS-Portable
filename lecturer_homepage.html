@@ -1,0 +1,86 @@
+<!--Written by Shea Yuin Ng, Nathan Sherburn-->
+<!--Created 29 August 2012-->
+<!DOCTYPE html>
+<!--Lecturer's homepage-->
+<html>
+	<head>
+		<title>Welcome</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<?php include('session_handler.php'); ?>
+		<link rel="stylesheet" href="css/melts.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery/jquery.mobile-1.3.1.min.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				url: "username.php",
+				type: 'post',
+				success: function (data) {
+					var find = /Undefined index/gi;
+			
+					if ( data.search(find) == -1 ){
+						$("#puname").text(data);
+					}
+					else{
+						alert("Please log in!");
+						$.mobile.changePage($(document.location.href="index.html"), "slideup");  
+					}
+				}, 
+				error: function() {  
+					alert("Please log in!");
+					$.mobile.changePage($(document.location.href="index.html"), "slideup");  
+				}  
+			})// ajax
+		</script>
+		<style>
+			#bugreport {
+				position:fixed;
+				bottom:10px;
+				right:0px;
+			}
+			#bugreport a:link, 
+			#bugreport a:visited, 
+			#bugreport a:hover { 
+				color: #000000; 
+				text-decoration: none; 
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page" id="lecturer_homepage" data-theme="a">
+			
+			<!--<script type="text/javascript" charset="utf-8" src="javascript/lecturer_homepage.js"></script>-->
+			<!-- /header -->
+		<div data-role="header" data-theme="c" data-position="inline">
+			<table border="0"><tr><td style="padding-left:44px;">
+			</td><td width="100%">
+			<center>Welcome</center>
+			</td><td style="padding-right:24px;">
+			<script type="text/javascript" charset="utf-8" src="javascript/logout.js"></script>
+			<a href id="page_logout_submit" rel="external" data-ajax="false"><img border="0" src="logout.png" height="24" width="20"></a>
+			</td></tr></table>
+		</div>
+			<!-- /header -->
+			<div data-role="content" data-theme="a" style="max-width:800px;margin: 0 auto;">
+				</br>
+				<b>Please choose an option</b>
+				</br>
+				</br>
+				</br>
+				<ul data-role="listview" data-theme="b" id="lecturer_optionlist">
+					<li><a href="view_unitpage.html" rel="external" data-ajax="false">View units</a></li>
+					<li><a href="add_unitpage.html" rel="external" data-ajax="false">Add units</a></li>
+					<li><a href="lec_settings.html" rel="external" data-ajax="false">Settings</a></li>
+				</ul>
+				</br>
+				</br>
+				</br>
+				<div id="bugreport">
+				<a href="mailto:nrshe1@student.monash.edu,jonathan.li@monash.edu?subject=Bug Report"><img src="bug.png" height="30" width="30">&nbsp;Submit a bug report&nbsp;</a>
+				<div>
+			</div>
+			<!-- /content -->
+		</div>
+	</body>
+</html>

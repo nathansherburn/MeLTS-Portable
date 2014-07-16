@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--Written by Shea Yuin Ng, Nathan Sherburn-->
+<!--Created 15 May 2013-->
+<!--For lecturers to change the settings for their account-->
+<html>
+	<head>
+		<title>Settings</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<?php include('session_handler.php'); ?>
+		<link rel="stylesheet" href="css/melts.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery/jquery-migrate-1.1.0.js"></script>
+		<script src="jquery/jquery.mobile-1.3.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="javascript/settings.js"></script>
+	</head>
+	<body>
+		<!-- /Login page -->
+		<div data-role="page" id="create_accountpage" data-theme="a">
+			<div data-role="header" data-theme="c">				
+				<table border="0"><tr><td style="padding-left:24px;">
+				<a href="student_homepage.html"  rel="external"><img border="0" src="back.png" height="24" width="20"></a>
+				</td><td width="100%">
+				<center>Settings</center>
+				</td><td style="padding-right:24px;">
+				<script type="text/javascript" charset="utf-8" src="javascript/logout.js"></script>
+				<a href id="page_logout_submit" rel="external" data-ajax="false"><img border="0" src="logout.png" height="24" width="20"></a>
+				</td></tr></table>
+			</div>
+			<!-- /header -->
+			<div data-role="content" class='content' data-theme="a" style="max-width:800px;margin: 0 auto;">
+					</br>
+					<b>Change password</b>
+					</br>
+					</br>
+					</br>
+					Current password:
+					</br>
+					<input type="password" id="currpswd" />
+					</br>
+					New password:
+					</br>
+					<input type="password" id="newpswd" />
+					</br>
+					Retype new password:
+					</br>
+					<input type="password" id="repswd" />
+					<!-- /Create account button -->
+					</br>
+					</br>
+					<fieldset>
+						<div><button type="button" data-theme="a" id="change_pass">Change password</button></div>
+					</fieldset>
+					<!-- /create account button -->
+				<div>
+					<p id = "msg"></p>
+				</div>
+				<!-- /header -->
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /page -->
+	</body>
+</html>
